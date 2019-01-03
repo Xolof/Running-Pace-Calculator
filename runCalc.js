@@ -3,9 +3,13 @@ function calculator(distance, time) {
 	let rawPace = time/distance;
 	let roundPace = Math.floor(rawPace);
 	let seconds = Math.floor((rawPace - roundPace) * 60);
-
-	document.getElementById("output").innerHTML = 
-	" " + roundPace + ":" + seconds + " minutes per kilometer.";
+		if (seconds < 10) {
+			document.getElementById("output").innerHTML = 
+			" " + roundPace + ":" + "0" + seconds + " minutes per kilometer.";
+		} else {
+			document.getElementById("output").innerHTML = 
+			" " + roundPace + ":" + seconds + " minutes per kilometer.";
+		}
 
 	let splits = "Splits: <br/><br/>";
 
