@@ -13,7 +13,11 @@ function calculator(distance, time) {
 		let rawSplit = (rawPace * i);
 		let roundSplit = Math.floor(rawSplit);
 		let splitSeconds = Math.floor((rawSplit - roundSplit) * 60);
-		splits += i + " km: " + roundSplit + ":" + splitSeconds + " <br/><br/>";
+		if (splitSeconds < 10) {
+			splits += i + " km: " + roundSplit + ":" + "0" + splitSeconds + " <br/><br/>";
+		} else {
+			splits += i + " km: " + roundSplit + ":" + splitSeconds + " <br/><br/>";
+		}
 	}
 
 	document.getElementById("kmSplit").innerHTML = splits; 
